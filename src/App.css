@@ -2,6 +2,7 @@
     position: relative;
     width: 1024px;
     height: 768px;
+    overflow: hidden;
 }
 
 .slideWrapper__FirstSlide {
@@ -17,6 +18,14 @@
     width: 100%;
     height: 100%;
     background-image: url("../public/SecondSlideBackgroundImage.png");
+    background-size: cover;
+}
+
+.slideWrapper__thirdSlide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url("../public/ThirdSlideBackgroundImage.png");
     background-size: cover;
 }
 
@@ -165,6 +174,109 @@
     text-align: left;
     line-height: 1.4;
     letter-spacing: 0.05rem;
+}
+
+.thirdSlide__DecorationImage {
+    position: absolute;
+    top: 80px;
+    left: 10px;
+    width: 315px;
+    height: 780px;
+}
+
+.thirdSlide__KeyMessage {
+    padding-top: 151.5px;
+    margin-left: 380px;
+    font-size: 2rem;
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.05rem;
+}
+
+.thirdSlide__Brend {
+    margin-top: 10px;
+    margin-left: 375px;
+    font-size: 6.875rem;
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.5rem;
+}
+
+.thirdSlide__Advances {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 235px;
+    margin-top: 80px;
+    width: 700px;
+    height: 300px;
+}
+
+.thirdSlide__Advances__Dishes {
+    position: relative;
+    padding: 40px 0 40px 150px;
+    width: 260px;
+    height: 185px;
+    background-color: #ffffff;
+    border-radius: 35px;
+    filter: drop-shadow(5.4px 8.4px 31.6px rgba(157, 185, 198, 0.39));
+}
+
+.thirdSlide__Advances__Dishes > img {
+    position: absolute;
+    top: -35px;
+    width: 70px;
+    height: 70px;
+}
+
+.thirdSlide__Advances__Dishes > p {
+    font-size: 1.5rem;
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 300;
+    line-height: 1.25;
+    letter-spacing: 0.05rem;
+}
+
+.thirdSLide__Advances__RightBlock {
+
+}
+
+.thirdSlide__Advances__RightBlock__Time {
+    position: relative;
+    padding: 40px 40px;
+    width: 180px;
+    height: 70px;
+    background-color: #ffffff;
+    border-radius: 35px;
+    filter: drop-shadow(5.4px 8.4px 31.6px rgba(157, 185, 198, 0.39));
+}
+
+.thirdSlide__Advances__RightBlock__Time > img {
+    position: absolute;
+    top: -30px;
+    width: 70px;
+    height: 70px;
+}
+
+.thirdSlide__Advances__RightBlock__Time > p {
+    font-size: 1.5rem;
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 300;
+    line-height: 1.25;
+    letter-spacing: 0.05rem;
+}
+
+.thirdSlide__Advances__RightBlock__MoreButton {
+    margin-top: 35px;
+    width: 260px;
+    height: 80px;
+    background-color: transparent;
+    background-image: url("../public/MoreButtonBackgroundImage.svg");
+    background-size: cover;
+    border: none;
+    border-radius: 40px;
+    color: transparent;
+    cursor: pointer;
 }
 
 .logo {
