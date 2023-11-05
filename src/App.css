@@ -182,6 +182,7 @@
     left: 10px;
     width: 315px;
     height: 780px;
+    z-index: 15;
 }
 
 .thirdSlide__KeyMessage {
@@ -202,20 +203,145 @@
     letter-spacing: 0.5rem;
 }
 
+.thirdSlide__AdvancesModal {
+    position: absolute;
+    margin-top: -190px;
+    margin-left: 165px;
+    width: 800px;
+    height: 560px;
+    background-color: transparent;
+    border-radius: 35px;
+    transition: 400ms ease;
+    z-index: 0;
+}
+
+.thirdSlide__AdvancesModalActive {
+    background-color: #ffffff;
+    z-index: 10;
+}
+
+.thirdSlide__AdvancesModal__KeyMessage {
+    padding-top: 36.5px;
+    margin-left: 180px;
+    font-size: 1.75rem;
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.15rem;
+}
+
+.thirdSlide__AdvancesModal__Brend {
+    margin-top: 5px;
+    margin-left: 175px;
+    font-size: 6.125rem;
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.5rem;
+}
+
+.thirdSlide__AdvancesModal__AdvancesTextWrapper {
+    margin-top: 40px;
+    margin-left: 185px;
+    font-size: 1.5rem;
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.05rem;
+}
+
+.thirdSlide__AdvancesModal__AdvancesTextWrapper > span > h4 {
+    color: #b5dff3;
+    font-size: 1.75rem;
+}
+
+.thirdSlide__AdvancesModal__AdvancesTextWrapper > span > p {
+    margin: 5px 0 10px 0;
+}
+
+.thirdSlide__AdvancesModal__Controls {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    bottom: 30px;
+    left: 175px;
+    min-width: 135px;
+    width: auto;
+    height: 45px;
+}
+
+.thirdSlide__AdvancesModal__ControlsArrows {
+    background-color: transparent;
+    border: none;
+    width: 45px;
+    height: 45px;
+}
+
+.thirdSlide__AdvancesModal__ControlsArrows > img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.thirdSlide__AdvancesModal__Controls__slideButton {
+    width: 12.5px;
+    height: 12.5px;
+    background-color: transparent;
+    border: 2px solid #000000;
+    border-radius: 50%;
+    transition: 400ms ease;
+    cursor: pointer;
+}
+
+.thirdSlide__AdvancesModal__Controls__slideButtonActive {
+    width: 12.5px;
+    height: 12.5px;
+    background-color: #fc6da9;
+    border: none;
+    border-radius: 50%;
+    transition: 400ms ease;
+    cursor: pointer;
+}
+
+.advancesModal__Close {
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+}
+
+.advancesModal__Close > img {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.darkBackground {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 0.4;
+    transition: 400ms ease;
+    z-index: 5;
+}
+
 .thirdSlide__Advances {
     position: relative;
     display: flex;
     justify-content: space-between;
+    padding-top: 70px;
     margin-left: 235px;
-    margin-top: 80px;
     width: 700px;
     height: 300px;
 }
 
 .thirdSlide__Advances__Dishes {
     position: relative;
-    padding: 40px 0 40px 150px;
-    width: 260px;
+    padding: 40px 40px 40px 130px;
+    width: 240px;
     height: 185px;
     background-color: #ffffff;
     border-radius: 35px;
@@ -235,10 +361,6 @@
     font-weight: 300;
     line-height: 1.25;
     letter-spacing: 0.05rem;
-}
-
-.thirdSLide__Advances__RightBlock {
-
 }
 
 .thirdSlide__Advances__RightBlock__Time {

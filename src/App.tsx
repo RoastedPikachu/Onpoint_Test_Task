@@ -1,7 +1,68 @@
 import React, { useState } from "react";
 import "./App.css";
 
+interface ModalSlide {
+  id: number;
+  isActive: boolean;
+}
+
+interface Advance {
+  id: number;
+  text: string;
+}
+
 function App() {
+  const [isModalWindowActive, setIsModalWindowActive] = useState(false);
+
+  const [modalSlides, setModalSlides] = useState([
+    {
+      id: 1,
+      isActive: true,
+    },
+    {
+      id: 2,
+      isActive: false,
+    },
+  ] as ModalSlide[]);
+  const [advances, setAdvances] = useState([
+    {
+      id: 1,
+      text: "orci porta non pulvinar neque laoreet suspendisse",
+    },
+    {
+      id: 2,
+      text: "ornare quam viverra orci sagittis",
+    },
+    {
+      id: 3,
+      text: "orci porta non pulvinar neque laoreet suspendisse",
+    },
+    {
+      id: 4,
+      text: "ornare quam viverra orci sagittis",
+    },
+    {
+      id: 5,
+      text: "orci porta non pulvinar neque laoreet suspendisse",
+    },
+  ] as Advance[]);
+
+  const changeModalWindowActive = () => {
+    setIsModalWindowActive(!isModalWindowActive);
+  };
+
+  const changeSlide = (id: number) => {
+    setModalSlides(
+      modalSlides.map((slide: ModalSlide) => ({ ...slide, isActive: false })),
+    );
+    setModalSlides(
+      modalSlides.map((slide: ModalSlide) => ({
+        ...slide,
+        isActive: slide.id === id,
+      })),
+    );
+  };
+
   return (
     <>
       <section className="slideWrapper">
@@ -119,6 +180,65 @@ function App() {
             BREND<strong>XY</strong>
           </h2>
 
+          <div
+            className={`thirdSlide__AdvancesModal ${
+              isModalWindowActive ? "thirdSlide__AdvancesModalActive" : ""
+            }`}
+          >
+            {isModalWindowActive && (
+              <>
+                <p className="thirdSlide__AdvancesModal__KeyMessage">
+                  ПРЕИМУЩЕСТВА
+                </p>
+
+                <h2 className="thirdSlide__AdvancesModal__Brend">
+                  BREND<strong>XY</strong>
+                </h2>
+
+                <div className="thirdSlide__AdvancesModal__AdvancesTextWrapper">
+                  {advances.slice(0, 3).map((advance: Advance) => (
+                    <span key={advance.id}>
+                      <h4>{advance.id < 10 ? `0${advance.id}` : advance.id}</h4>
+
+                      <p>{advance.text}</p>
+                    </span>
+                  ))}
+                </div>
+
+                <div className="thirdSlide__AdvancesModal__Controls">
+                  <button className="thirdSlide__AdvancesModal__ControlsArrows">
+                    <img src="/LeftArrowIcon.svg" alt="Предыдущий слайд" />
+                  </button>
+
+                  {modalSlides.map((slide: ModalSlide) => (
+                    <button
+                      key={slide.id}
+                      onClick={() => changeSlide(slide.id)}
+                      className={
+                        slide.isActive
+                          ? "thirdSlide__AdvancesModal__Controls__slideButtonActive"
+                          : "thirdSlide__AdvancesModal__Controls__slideButton"
+                      }
+                    ></button>
+                  ))}
+
+                  <button className="thirdSlide__AdvancesModal__ControlsArrows">
+                    <img src="/RightArrowIcon.svg" alt="Следующий слайд" />
+                  </button>
+                </div>
+
+                <button
+                  onClick={() => changeModalWindowActive()}
+                  className="advancesModal__Close"
+                >
+                  <img src="/XmarkIcon.svg" alt="Закрыть модальное окно" />
+                </button>
+              </>
+            )}
+          </div>
+
+          {isModalWindowActive && <div className="darkBackground"></div>}
+
           <div className="thirdSlide__Advances">
             <div className="thirdSlide__Advances__Dishes">
               <img src="/DishesIcon.svg" alt="Иконка: Тарелки" />
@@ -136,7 +256,10 @@ function App() {
                 <p>Eget egestas purus viverra</p>
               </div>
 
-              <button className="thirdSlide__Advances__RightBlock__MoreButton">
+              <button
+                onClick={() => changeModalWindowActive()}
+                className="thirdSlide__Advances__RightBlock__MoreButton"
+              >
                 Подробнее
               </button>
             </div>
