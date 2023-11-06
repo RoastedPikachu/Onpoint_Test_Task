@@ -94,6 +94,7 @@ function App() {
         />
 
         <SecondSlide
+          targetSlideId={targetSlideId}
           styles={{
             position: "absolute",
             left: slidesStyles[1] + "px",

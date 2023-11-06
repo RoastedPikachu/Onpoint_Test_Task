@@ -2,15 +2,17 @@ import React from "react";
 import "./SecondSlide.css";
 
 interface SlideProps {
+  targetSlideId: number;
+  styles: Object;
   handleTouchStart: (event: any) => void;
   handleTouchEnd: (event: any) => void;
-  styles: Object;
 }
 
 const SecondSlide: React.FC<SlideProps> = ({
+  targetSlideId,
+  styles,
   handleTouchStart,
   handleTouchEnd,
-  styles,
 }) => {
   const handleTouchStartEvent = (event: any) => {
     handleTouchStart(event);
@@ -30,6 +32,14 @@ const SecondSlide: React.FC<SlideProps> = ({
       <h2 className="secondSlide__MessageHeading">
         текст <br /> сообщения
       </h2>
+
+      <img
+        src="/decorationImages/SpermAnimatedImage.png"
+        alt=""
+        className={`animatedImage ${
+          targetSlideId ? "animatedImageActive" : ""
+        }`}
+      />
 
       <div className="secondSlide__MessageWrapper">
         <div className="secondSlide__MessageWrapper__MessageTop"></div>

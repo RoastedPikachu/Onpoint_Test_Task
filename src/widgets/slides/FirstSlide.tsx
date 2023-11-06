@@ -41,13 +41,13 @@ const FirstSlide: React.FC<SlideProps> = ({
         </h1>
 
         <img
-          src="/FirstAnimatedBacteriaImage.png"
+          src="/decorationImages/FirstAnimatedBacteriaImage.png"
           alt=""
           className="centerBlock__FirstAnimatedImage"
         />
 
         <img
-          src="/SecondAnimatedBacteriaImage.png"
+          src="/decorationImages/SecondAnimatedBacteriaImage.png"
           alt=""
           className="centerBlock__SecondAnimatedImage"
         />
@@ -59,13 +59,13 @@ const FirstSlide: React.FC<SlideProps> = ({
         />
 
         <img
-          src="/ThirdAnimatedBacteriaImage.png"
+          src="/decorationImages/ThirdAnimatedBacteriaImage.png"
           alt=""
           className="centerBlock__ThirdAnimatedImage"
         />
 
         <img
-          src="/FourthAnimatedBacteriaImage.png"
+          src="/decorationImages/FourthAnimatedBacteriaImage.png"
           alt=""
           className="centerBlock__FourthAnimatedImage"
         />

@@ -10,6 +10,19 @@
     font-weight: 300;
 }
 
+.animatedImage {
+    position: absolute;
+    top: 100px;
+    right: 0;
+    width: 650px;
+    height: 600px;
+    z-index: 0;
+}
+
+.animatedImageActive {
+    animation: 4s ease-in-out 1s 1 spermAppearance;
+}
+
 .secondSlide__MessageWrapper {
     padding: 0 40px;
     margin-top: 50px;
@@ -93,5 +106,18 @@
     background: #ffffff;
     border-radius: 0 0 35px 35px;
     z-index: 30;
+}
+
+@keyframes spermAppearance {
+    0% {
+        opacity: 0;
+        top: 200px;
+        right: -100px;
+    }
+    100% {
+        opacity: 1;
+        top: 100px;
+        right: 0;
+    }
 }
 
