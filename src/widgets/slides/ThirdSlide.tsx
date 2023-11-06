@@ -36,7 +36,7 @@ const ThirdSlide: React.FC<SlideProps> = ({
       isActive: false,
     },
   ] as ModalSlide[]);
-  const [advances, setAdvances] = useState([
+  const [advances, _setAdvances] = useState([
     {
       id: 1,
       text: "orci porta non pulvinar neque laoreet suspendisse",
@@ -74,7 +74,7 @@ const ThirdSlide: React.FC<SlideProps> = ({
   const getPreviousModalSlide = () => {
     const targetIndex = modalSlides.find(
       (slide: ModalSlide) => slide.isActive,
-    ).id;
+    )!.id;
     if (targetIndex !== 1) {
       setStartAdvancesIndex(3 * (targetIndex - 2));
       setModalSlides(
@@ -92,7 +92,7 @@ const ThirdSlide: React.FC<SlideProps> = ({
   const getNextModalSlide = () => {
     const targetIndex = modalSlides.find(
       (slide: ModalSlide) => slide.isActive,
-    ).id;
+    )!.id;
     if (targetIndex !== modalSlides.length) {
       setStartAdvancesIndex(3 * targetIndex);
       setModalSlides(

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 
 import FirstSlide from "./widgets/slides/FirstSlide";
 import SecondSlide from "./widgets/slides/SecondSlide";
@@ -36,7 +36,11 @@ function App() {
     }
   };
 
-  const changePhotoByTouch = (event, getNext, getPrevious) => {
+  const changePhotoByTouch = (
+    event: any,
+    getNext: () => void,
+    getPrevious: () => void,
+  ) => {
     setLTC(event.changedTouches[0].pageX);
 
     let isClosestHasScroll = event.target.closest(
