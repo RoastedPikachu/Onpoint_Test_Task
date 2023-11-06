@@ -1,9 +1,38 @@
 import React from "react";
 import "./FirstSlide.css";
 
-const FirstSlide = () => {
+interface SlideProps {
+  handleTouchStart: (event: any) => void;
+  handleTouchEnd: (event: any) => void;
+  handleClick: () => void;
+  styles: Object;
+}
+
+const FirstSlide: React.FC<SlideProps> = ({
+  handleTouchStart,
+  handleTouchEnd,
+  handleClick,
+  styles,
+}) => {
+  const handleTouchStartEvent = (event: any) => {
+    handleTouchStart(event);
+  };
+
+  const handleTouchEndEvent = (event: any) => {
+    handleTouchEnd(event);
+  };
+
+  const handleClickEvent = () => {
+    handleClick();
+  };
+
   return (
-    <div className="slideWrapper__FirstSlide">
+    <div
+      onTouchStart={(event: any) => handleTouchStartEvent(event)}
+      onTouchEnd={(event: any) => handleTouchEndEvent(event)}
+      className="slideWrapper__FirstSlide"
+      style={styles}
+    >
       <div className="centerBlock">
         <h3 className="centerBlock__SmallHeading">ПРИВЕТ, </h3>
 
@@ -12,12 +41,15 @@ const FirstSlide = () => {
         </h1>
 
         <img
-          src="/SpermDecorationImage.png"
+          src="/decorationImages/SpermDecorationImage.png"
           alt=""
           className="centerBlock__DecorationImage"
         />
 
-        <button className="centerBlock__Button"></button>
+        <button
+          onClick={() => handleClickEvent()}
+          className="centerBlock__Button"
+        ></button>
       </div>
     </div>
   );

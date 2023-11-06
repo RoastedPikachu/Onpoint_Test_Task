@@ -1,9 +1,5 @@
 .slideWrapper__SecondSlide {
-    position: relative;
-    width: 100%;
-    height: 100%;
     background-image: url("../../../public/background/SecondSlideBackgroundimage.png");
-    background-size: cover;
 }
 
 .secondSlide__MessageHeading {
@@ -41,6 +37,8 @@
     background-image: url("../../../public/ScrollbarThumb.svg");
     background-repeat: no-repeat;
     border-radius: 20px;
+    cursor: pointer;
+    z-index: 30;
 }
 
 .secondSlide__MessageWrapper__Message {

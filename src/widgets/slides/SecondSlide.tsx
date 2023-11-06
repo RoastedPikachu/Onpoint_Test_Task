@@ -1,8 +1,32 @@
 import React from "react";
+import "./SecondSlide.css";
 
-const SecondSlide = () => {
+interface SlideProps {
+  handleTouchStart: (event: any) => void;
+  handleTouchEnd: (event: any) => void;
+  styles: Object;
+}
+
+const SecondSlide: React.FC<SlideProps> = ({
+  handleTouchStart,
+  handleTouchEnd,
+  styles,
+}) => {
+  const handleTouchStartEvent = (event: any) => {
+    handleTouchStart(event);
+  };
+
+  const handleTouchEndEvent = (event: any) => {
+    handleTouchEnd(event);
+  };
+
   return (
-    <div className="slideWrapper__SecondSlide">
+    <div
+      onTouchStart={(event: any) => handleTouchStartEvent(event)}
+      onTouchEnd={(event: any) => handleTouchEndEvent(event)}
+      className="slideWrapper__SecondSlide"
+      style={styles}
+    >
       <h2 className="secondSlide__MessageHeading">
         текст <br /> сообщения
       </h2>

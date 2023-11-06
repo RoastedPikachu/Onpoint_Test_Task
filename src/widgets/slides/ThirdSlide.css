@@ -1,9 +1,5 @@
 .slideWrapper__thirdSlide {
-    position: relative;
-    width: 100%;
-    height: 100%;
     background-image: url("../../../public/background/ThirdSlideBackgroundImage.png");
-    background-size: cover;
 }
 
 .thirdSlide__DecorationImage {

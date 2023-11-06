@@ -1,5 +1,6 @@
 .slideWrapper {
     position: relative;
+    display: flex;
     width: 1024px;
     height: 768px;
     overflow: hidden;

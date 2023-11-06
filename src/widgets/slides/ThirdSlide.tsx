@@ -11,7 +11,17 @@ interface Advance {
   text: string;
 }
 
-const ThirdSlide = () => {
+interface SlideProps {
+  handleTouchStart: (event: any) => void;
+  handleTouchEnd: (event: any) => void;
+  styles: Object;
+}
+
+const ThirdSlide: React.FC<SlideProps> = ({
+  handleTouchStart,
+  handleTouchEnd,
+  styles,
+}) => {
   const [isModalWindowActive, setIsModalWindowActive] = useState(false);
 
   const [startAdvancesIndex, setStartAdvancesIndex] = useState(0);
@@ -48,6 +58,14 @@ const ThirdSlide = () => {
       text: "orci porta non pulvinar neque laoreet suspendisse",
     },
   ] as Advance[]);
+
+  const handleTouchStartEvent = (event: any) => {
+    handleTouchStart(event);
+  };
+
+  const handleTouchEndEvent = (event: any) => {
+    handleTouchEnd(event);
+  };
 
   const changeModalWindowActive = () => {
     setIsModalWindowActive(!isModalWindowActive);
@@ -103,7 +121,12 @@ const ThirdSlide = () => {
   };
 
   return (
-    <div className="slideWrapper__thirdSlide">
+    <div
+      onTouchStart={(event: any) => handleTouchStartEvent(event)}
+      onTouchEnd={(event: any) => handleTouchEndEvent(event)}
+      className="slideWrapper__thirdSlide"
+      style={styles}
+    >
       <img
         src="/decorationImages/SprayDecorationImage.png"
         alt=""
