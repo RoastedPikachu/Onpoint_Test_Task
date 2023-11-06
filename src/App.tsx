@@ -36,6 +36,11 @@ function App() {
     }
   };
 
+  const goToFirstSlide = () => {
+    setTargetSlideId(0);
+    setSlidesStyles([0, 1024, 2048]);
+  };
+
   const changePhotoByTouch = (
     event: any,
     getNext: () => void,
@@ -61,7 +66,7 @@ function App() {
     <>
       <section className="slideWrapper">
         <div className="topBlock">
-          <button className="topBlock__Button">
+          <button onClick={() => goToFirstSlide()} className="topBlock__Button">
             <img
               src="/icon/HomeIcon.svg"
               alt="Иконка: вернуться на первый слайд"

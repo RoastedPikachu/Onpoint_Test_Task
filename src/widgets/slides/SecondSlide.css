@@ -11,52 +11,87 @@
 }
 
 .secondSlide__MessageWrapper {
-    position: relative;
+    padding: 0 40px;
     margin-top: 50px;
     margin-left: 72.5px;
-    width: 878px;
+    width: 785px;
     height: 445px;
     background: transparent;
     overflow-y: scroll;
+    overflow-x: hidden;
     direction: rtl;
+    z-index: 30;
 }
 
-.secondSlide__MessageWrapper::-webkit-scrollbar {
+::-webkit-scrollbar {
+    position: absolute;
     width: 25px;
 }
 
-.secondSlide__MessageWrapper::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     background: #000000;
     border-radius: 30px;
     border: 10px solid transparent;
     background-clip: content-box;
 }
 
-.secondSlide__MessageWrapper::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     height: 100px;
     background-image: url("../../../public/ScrollbarThumb.svg");
     background-repeat: no-repeat;
     border-radius: 20px;
     cursor: pointer;
+}
+
+.secondSlide__MessageWrapper__MessageTop {
+    position: absolute;
+    width: 760px;
+    height: 32.5px;
+    background: #ffffff;
+    border-radius: 35px 35px 0 0;
     z-index: 30;
 }
 
-.secondSlide__MessageWrapper__Message {
-    padding: 30px 40px;
-    width: 735px;
-    min-height: 445px;
-    height: auto;
+.secondSlide__MessageWrapper__MessageLeft {
+    position: absolute;
+    bottom: 95px;
+    left: 138px;
+    width: 41px;
+    height: 390px;
     background: #ffffff;
-    border-radius: 35px;
-    filter: drop-shadow(5.4px 8.4px 31.6px rgba(157, 185, 198, 0.39));
+    z-index: 30;
 }
 
 .secondSlide__MessageWrapper__MessageText {
+    position: relative;
+    margin: 30px 40px;
+    background: #ffffff;
     font-size: 1.5rem;
     font-family: 'Gilroy', sans-serif;
     font-weight: 300;
     text-align: left;
     line-height: 1.4;
     letter-spacing: 0.05rem;
+    filter: drop-shadow(5.4px 8.4px 31.6px rgba(157, 185, 198, 0.39));
+}
+
+.secondSlide__MessageWrapper__MessageRight {
+    position: absolute;
+    bottom: 95px;
+    right: 126px;
+    width: 40px;
+    height: 390px;
+    background: #ffffff;
+    z-index: 30;
+}
+
+.secondSlide__MessageWrapper__MessageBottom {
+    position: absolute;
+    bottom: 65.5px;
+    width: 760px;
+    height: 32.5px;
+    background: #ffffff;
+    border-radius: 0 0 35px 35px;
+    z-index: 30;
 }
 
