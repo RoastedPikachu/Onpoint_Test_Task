@@ -19,12 +19,33 @@
 }
 
 .centerBlock__MainHeading {
+    position: relative;
     margin-top: 10px;
     font-size: 6.75rem;
     font-family: 'Gilroy', sans-serif;
     font-weight: 300;
     letter-spacing: 0.2rem;
     line-height: 1.05;
+    z-index: 10;
+}
+
+.centerBlock__FirstAnimatedImage {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 60px;
+    height: 55px;
+    animation: 4.5s ease-in-out 0s infinite firstBacteria;
+}
+
+.centerBlock__SecondAnimatedImage {
+    position: absolute;
+    top: 160px;
+    right: -160px;
+    width: 115px;
+    height: 110px;
+    animation: 20s ease-in-out 0s infinite secondBacteria;
+    z-index: 20;
 }
 
 .centerBlock__DecorationImage {
@@ -33,6 +54,24 @@
     right: -220px;
     width: 590px;
     height: 90px;
+}
+
+.centerBlock__ThirdAnimatedImage {
+    position: absolute;
+    bottom: 215px;
+    left: -45px;
+    width: 85px;
+    height: 80px;
+    animation: 8s ease-in-out 0s infinite thirdBacteria;
+}
+
+.centerBlock__FourthAnimatedImage {
+    position: absolute;
+    bottom: -90px;
+    right: 50px;
+    width: 225px;
+    height: 220px;
+    animation: 6s ease-in-out 0s infinite fourthBacteria;
 }
 
 .centerBlock__Button {
@@ -47,4 +86,160 @@
     border: none;
     border-radius: 40px;
     cursor: pointer;
+}
+
+@keyframes firstBacteria {
+    0% {
+        transform: translateX(0%) translateY(0%);
+    }
+    6.25% {
+        transform: translateX(-1.25%) translateY(1.75%);
+    }
+    12.5% {
+        transform: translateX(-2.5%) translateY(3.5%);
+    }
+    18.75% {
+        transform: translateX(-3.75%) translateY(5.25%);
+    }
+    25% {
+        transform: translateX(-5%) translateY(7%);
+    }
+    31.25% {
+        transform: translateX(-6.25%) translateY(5.25%);
+    }
+    37.5% {
+        transform: translateX(-7.5%) translateY(3.5%);
+    }
+    43.75% {
+        transform: translateX(-8.75%) translateY(1.75%);
+    }
+    50% {
+        transform: translateX(-10%) translateY(0%);
+    }
+    56.25% {
+        transform: translateX(-8.75%) translateY(-1.75%);
+    }
+    62.5% {
+        transform: translateX(-7.5%) translateY(-3.5%);
+    }
+    68.75% {
+        transform: translateX(-6.25%) translateY(-5.25%);
+    }
+    75% {
+        transform: translateX(-5%) translateY(-7%);
+    }
+    81.25% {
+        transform: translateX(-3.75%) translateY(-5.25%);
+    }
+    87.5% {
+        transform: translateX(-2.5%) translateY(-3.5%);
+    }
+    93.75% {
+        transform: translateX(-1.25%) translateY(-1.75%);
+    }
+    100% {
+        transform: translateX(0%) translateY(0%);
+    }
+}
+
+@keyframes secondBacteria {
+    0% {
+        transform: translateX(0%) translateY(0%) rotate(0deg);
+    }
+    6.25% {
+        transform: translateX(-5%) translateY(5.25%) rotate(10.5deg);
+    }
+    12.5% {
+        transform: translateX(-10%) translateY(10.5%) rotate(21deg);
+    }
+    18.75% {
+        transform: translateX(-15%) translateY(15.75%) rotate(31.5deg);
+    }
+    25% {
+        transform: translateX(-20%) translateY(21%) rotate(42deg);
+    }
+    31.25% {
+        transform: translateX(-25%) translateY(15.75%) rotate(52.5deg);
+    }
+    37.5% {
+        transform: translateX(-30%) translateY(10.5%) rotate(63deg);
+    }
+    43.75% {
+        transform: translateX(-35%) translateY(5.25%) rotate(73.5deg);
+    }
+    50% {
+        transform: translateX(-40%) translateY(0%) rotate(84deg);
+    }
+    56.25% {
+        transform: translateX(-35%) translateY(-10.5%) rotate(73.5deg);
+    }
+    62.5% {
+        transform: translateX(-30%) translateY(-21%) rotate(63deg);
+    }
+    68.75% {
+        transform: translateX(-25%) translateY(-31.5%) rotate(52.5deg);
+    }
+    75% {
+        transform: translateX(-20%) translateY(-42%) rotate(42deg);
+    }
+    81.25% {
+        transform: translateX(-15%) translateY(-31.5%) rotate(31.5deg);
+    }
+    87.5% {
+        transform: translateX(-10%) translateY(-21%) rotate(21deg);
+    }
+    93.75% {
+        transform: translateX(-5%) translateY(-10.5%) rotate(10.5deg);
+    }
+    100% {
+        transform: translateX(0%) translateY(0%) rotate(0deg);
+    }
+}
+
+@keyframes thirdBacteria {
+    0% {
+        transform: translateX(0%) translateY(0%);
+    }
+    12.5% {
+        transform: translateX(2.5%) translateY(15%);
+    }
+    25% {
+        transform: translateX(5%) translateY(30%);
+    }
+    37.5% {
+        transform: translateX(7.5%) translateY(45%);
+    }
+    50% {
+        transform: translateX(10%) translateY(60%);
+    }
+    62.5% {
+        transform: translateX(7.5%) translateY(45%);
+    }
+    75% {
+        transform: translateX(5%) translateY(30%);
+    }
+    87.5% {
+        transform: translateX(2.5%) translateY(15%);
+    }
+    100% {
+        transform: translateX(0%) translateY(0%);
+    }
+}
+
+@keyframes fourthBacteria {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(0.9);
+    }
+    50% {
+        transform: scale(0.8);
+    }
+    75% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
 }

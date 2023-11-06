@@ -41,9 +41,33 @@ const FirstSlide: React.FC<SlideProps> = ({
         </h1>
 
         <img
+          src="/FirstAnimatedBacteriaImage.png"
+          alt=""
+          className="centerBlock__FirstAnimatedImage"
+        />
+
+        <img
+          src="/SecondAnimatedBacteriaImage.png"
+          alt=""
+          className="centerBlock__SecondAnimatedImage"
+        />
+
+        <img
           src="/decorationImages/SpermDecorationImage.png"
           alt=""
           className="centerBlock__DecorationImage"
+        />
+
+        <img
+          src="/ThirdAnimatedBacteriaImage.png"
+          alt=""
+          className="centerBlock__ThirdAnimatedImage"
+        />
+
+        <img
+          src="/FourthAnimatedBacteriaImage.png"
+          alt=""
+          className="centerBlock__FourthAnimatedImage"
         />
 
         <button
