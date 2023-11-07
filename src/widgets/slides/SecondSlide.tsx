@@ -1,14 +1,13 @@
 import React from "react";
+import { SlideProps } from "../../interfaces";
+
 import "./SecondSlide.css";
 
-interface SlideProps {
+interface SecondSlideProps extends SlideProps {
   targetSlideId: number;
-  styles: Object;
-  handleTouchStart: (event: any) => void;
-  handleTouchEnd: (event: any) => void;
 }
 
-const SecondSlide: React.FC<SlideProps> = ({
+const SecondSlide: React.FC<SecondSlideProps> = ({
   targetSlideId,
   styles,
   handleTouchStart,
@@ -42,6 +41,8 @@ const SecondSlide: React.FC<SlideProps> = ({
       />
 
       <div className="secondSlide__MessageWrapper">
+        {/* Следующие 2 div-a - обёртки вокруг прокручиваемого текста*/}
+
         <div className="secondSlide__MessageWrapper__MessageTop"></div>
 
         <div className="secondSlide__MessageWrapper__MessageLeft"></div>
@@ -100,6 +101,8 @@ const SecondSlide: React.FC<SlideProps> = ({
           morbi tempus iaculis urna. Mi tempus imperdiet nulla malesuada
           pellentesque elit eget gravida.
         </p>
+
+        {/* Следующие 2 div-a - обёртки вокруг прокручиваемого текста*/}
 
         <div className="secondSlide__MessageWrapper__MessageRight"></div>
 

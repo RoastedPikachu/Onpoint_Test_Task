@@ -1,20 +1,14 @@
 import React, { useState } from "react";
+import { SlideProps, CycleEntity } from "../../interfaces";
+
 import "./ThirdSlide.css";
 
-interface ModalSlide {
-  id: number;
+interface ModalSlide extends CycleEntity {
   isActive: boolean;
 }
 
-interface Advance {
-  id: number;
+interface Advance extends CycleEntity {
   text: string;
-}
-
-interface SlideProps {
-  handleTouchStart: (event: any) => void;
-  handleTouchEnd: (event: any) => void;
-  styles: Object;
 }
 
 const ThirdSlide: React.FC<SlideProps> = ({
@@ -105,9 +99,6 @@ const ThirdSlide: React.FC<SlideProps> = ({
 
   const changeSlide = (id: number) => {
     setStartAdvancesIndex(3 * (id - 1));
-    setModalSlides(
-      modalSlides.map((slide: ModalSlide) => ({ ...slide, isActive: false })),
-    );
     setModalSlides(
       modalSlides.map((slide: ModalSlide) => ({
         ...slide,

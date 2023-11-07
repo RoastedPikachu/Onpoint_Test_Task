@@ -1,14 +1,13 @@
 import React from "react";
+import { SlideProps } from "../../interfaces";
+
 import "./FirstSlide.css";
 
-interface SlideProps {
-  handleTouchStart: (event: any) => void;
-  handleTouchEnd: (event: any) => void;
+interface FirstSlideProps extends SlideProps {
   handleClick: () => void;
-  styles: Object;
 }
 
-const FirstSlide: React.FC<SlideProps> = ({
+const FirstSlide: React.FC<FirstSlideProps> = ({
   handleTouchStart,
   handleTouchEnd,
   handleClick,
