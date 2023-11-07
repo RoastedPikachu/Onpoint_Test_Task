@@ -36,7 +36,7 @@ function App() {
     }
   };
 
-  const goToFirstSlide = () => {
+  const getFirstSlide = () => {
     setTargetSlideId(0);
     setSlidesStyles([0, 1024, 2048]);
   };
@@ -51,11 +51,19 @@ function App() {
     let isClosestHasScroll = event.target.closest(
       ".secondSlide__MessageWrapper",
     );
+    let isClosestOtherSlider = event.target.closest(
+      ".thirdSlide__AdvancesModal__Controls",
+    );
 
-    if (!isClosestHasScroll && firstTouchCoordinates < lastTouchCoordinates) {
+    if (
+      !isClosestHasScroll &&
+      !isClosestOtherSlider &&
+      firstTouchCoordinates < lastTouchCoordinates
+    ) {
       getPrevious();
     } else if (
       !isClosestHasScroll &&
+      !isClosestOtherSlider &&
       firstTouchCoordinates > lastTouchCoordinates
     ) {
       getNext();
@@ -66,7 +74,7 @@ function App() {
     <>
       <section className="slideWrapper">
         <div className="topBlock">
-          <button onClick={() => goToFirstSlide()} className="topBlock__Button">
+          <button onClick={() => getFirstSlide()} className="topBlock__Button">
             <img
               src="/icon/HomeIcon.svg"
               alt="Иконка: вернуться на первый слайд"

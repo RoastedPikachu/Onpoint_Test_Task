@@ -75,11 +75,9 @@ const ThirdSlide: React.FC<SlideProps> = ({
     const targetIndex = modalSlides.find(
       (slide: ModalSlide) => slide.isActive,
     )!.id;
+
     if (targetIndex !== 1) {
       setStartAdvancesIndex(3 * (targetIndex - 2));
-      setModalSlides(
-        modalSlides.map((slide: ModalSlide) => ({ ...slide, isActive: false })),
-      );
       setModalSlides(
         modalSlides.map((slide: ModalSlide) => ({
           ...slide,
@@ -93,11 +91,9 @@ const ThirdSlide: React.FC<SlideProps> = ({
     const targetIndex = modalSlides.find(
       (slide: ModalSlide) => slide.isActive,
     )!.id;
+
     if (targetIndex !== modalSlides.length) {
       setStartAdvancesIndex(3 * targetIndex);
-      setModalSlides(
-        modalSlides.map((slide: ModalSlide) => ({ ...slide, isActive: false })),
-      );
       setModalSlides(
         modalSlides.map((slide: ModalSlide) => ({
           ...slide,
