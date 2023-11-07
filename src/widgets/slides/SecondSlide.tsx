@@ -1,5 +1,5 @@
 import React from "react";
-import { SlideProps } from "../../interfaces";
+import { SlideProps } from "../../interfaces/index.ts";
 
 import "./SecondSlide.css";
 

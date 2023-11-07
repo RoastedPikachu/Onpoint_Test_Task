@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { SlideProps, CycleEntity } from "../../interfaces";
+import { SlideProps, CycleEntity } from "../../interfaces/index.ts";
 
 import "./ThirdSlide.css";
 
